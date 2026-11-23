@@ -1,0 +1,14 @@
+{
+  "name": "sanskrit-sandhi",
+  "version": "1.0.0",
+  "description": "Orthography- and sandhi-tolerant matching for Devanāgarī text, sandhi joining, and locating पद inside a sandhi-joined word.",
+  "main": "sanskrit-search.js",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConstrainedRandomVar/sanskrit-sandhi.git"
+  }
+}

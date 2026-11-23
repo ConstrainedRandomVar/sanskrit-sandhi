@@ -1,0 +1,1326 @@
+{
+ "_comment": "Corpus-independent regression cases for sanskrit-search (exported from the adhyayana-sahakārī source; the corpus hit-count cases are not included).",
+ "normEqual": [
+  [
+   "सन्न्यस्त",
+   "संन्यस्त"
+  ],
+  [
+   "रामम्",
+   "रामं"
+  ],
+  [
+   "एवम्",
+   "एवं"
+  ],
+  [
+   "सङ्ग्रहः",
+   "संग्रहः"
+  ],
+  [
+   "सन्‍रसो",
+   "संरसो"
+  ],
+  [
+   "अदेङ् गुणः",
+   "अदें गुणः"
+  ],
+  [
+   "पीङ् पाने",
+   "पीं पाने"
+  ]
+ ],
+ "idempotent": [
+  "सन्न्यस्त",
+  "संन्यस्त",
+  "अग्निहोत्रादीनामेव",
+  "एवम्",
+  "सङ्ग्रहः",
+  "अदेङ् गुणः"
+ ],
+ "normMapEq": [
+  "योगसन्न्यस्त",
+  "सन्‍रसो",
+  "रामम्",
+  "तत्र तत्र",
+  "अग्निहोत्रादीनामेव",
+  "अदेङ् गुणः"
+ ],
+ "sandhiJoin": [
+  {
+   "a": "रामः",
+   "b": "इति",
+   "expect": "रामइति",
+   "note": "A4 aḥ+non-a → hiatus"
+  },
+  {
+   "a": "रामः",
+   "b": "अत्र",
+   "expect": "रामोत्र",
+   "note": "aḥ+a → o'"
+  },
+  {
+   "a": "रामः",
+   "b": "आगच्छति",
+   "expect": "रामआगच्छति",
+   "note": "aḥ+ā → hiatus (yatva+lopa 8.3.17/8.3.19), NOT savarna-dīrgha — रामालयः itself is a samāsa (bare stem rāma + ālayaḥ, no visarga involved), a different derivation entirely"
+  },
+  {
+   "a": "राम",
+   "b": "आलयः",
+   "expect": "रामालयः",
+   "note": "samāsa-internal vowel sandhi (no visarga): bare stem rāma + ālayaḥ, plain a+ā→ā via vowelSandhi"
+  },
+  {
+   "a": "देवाः",
+   "b": "इति",
+   "expect": "देवाइति",
+   "note": "āḥ+V → ā hiatus"
+  },
+  {
+   "a": "ततः",
+   "b": "च",
+   "expect": "ततश्च",
+   "note": "ḥ+c → ś"
+  },
+  {
+   "a": "रामः",
+   "b": "गच्छति",
+   "expect": "रामोगच्छति",
+   "note": "aḥ+voiced → o"
+  },
+  {
+   "a": "रामः",
+   "b": "तत्र",
+   "expect": "रामस्तत्र",
+   "note": "ḥ+t → s"
+  },
+  {
+   "a": "रामः",
+   "b": "शेते",
+   "expect": "रामःशेते",
+   "note": "B4: ḥ before ś RETAINED (do not assimilate)"
+  },
+  {
+   "a": "तत्",
+   "b": "च",
+   "expect": "तच्च",
+   "note": "B1 ścutva"
+  },
+  {
+   "a": "तत्",
+   "b": "छ",
+   "expect": "तच्छ",
+   "note": "B1 ścutva"
+  },
+  {
+   "a": "तत्",
+   "b": "श",
+   "expect": "तच्छ",
+   "note": "B1 त्+श → च्छ"
+  },
+  {
+   "a": "तत्",
+   "b": "गच्छति",
+   "expect": "तद्गच्छति",
+   "note": "B1 त्+voiced → द्"
+  },
+  {
+   "a": "तद्",
+   "b": "मयः",
+   "expect": "तन्मयः",
+   "note": "8.4.45 यरोऽनुनासिके ऽनुनासिको वा: त्/द्+nasal → न् (dental class's OWN nasal, NOT a copy of the following one — real bug found 2026-08-06, Harsha: sandhiJoin previously gave तम्मयः, doubling म् instead of using त्'s own class nasal न्)"
+  },
+  {
+   "a": "तत्",
+   "b": "मनसा",
+   "expect": "तन्मनसा",
+   "note": "8.4.45, same fix — real corpus example (Ka Up.)"
+  },
+  {
+   "a": "अशक्नोत्",
+   "b": "मनसा",
+   "expect": "अशक्नोन्मनसा",
+   "note": "8.4.45, same fix — real corpus example (Ka Up.)"
+  },
+  {
+   "a": "प्राविशत्",
+   "b": "मृत्युः",
+   "expect": "प्राविशन्मृत्युः",
+   "note": "8.4.45, same fix — real corpus example (Ka Up.)"
+  },
+  {
+   "a": "अपानात्",
+   "b": "मृत्युः",
+   "expect": "अपानान्मृत्युः",
+   "note": "8.4.45, same fix — real corpus example (Ka Up.)"
+  },
+  {
+   "a": "हृदयात्",
+   "b": "मनः",
+   "expect": "हृदयान्मनः",
+   "note": "8.4.45, same fix — real corpus example (Ka Up.)"
+  },
+  {
+   "a": "तद्",
+   "b": "नाम",
+   "expect": "तन्नाम",
+   "note": "8.4.45, त्/द्+न् — coincidentally already correct before the fix (न् IS the dental class's own nasal), kept as a no-regression guard"
+  },
+  {
+   "a": "विकारान्",
+   "b": "चेत्",
+   "expect": "विकारांश्चेत्",
+   "note": "न्+c → ṃś (folio 689 regression)"
+  },
+  {
+   "a": "तान्",
+   "b": "तरति",
+   "expect": "तांस्तरति",
+   "note": "न्+t → ṃs"
+  },
+  {
+   "a": "रामान्",
+   "b": "ट",
+   "expect": "रामांष्ट",
+   "note": "न्+ṭ → ṃṣ"
+  },
+  {
+   "a": "त्वम्",
+   "b": "प्रज्ञावादान्",
+   "expect": "त्वंप्रज्ञावादान्",
+   "note": "म्+cons → ṃ (8.3.23 मोऽनुस्वारः; BG 2.11 त्वं प्रज्ञावादान्)"
+  },
+  {
+   "a": "किम्",
+   "b": "करोषि",
+   "expect": "किंकरोषि",
+   "note": "म्+cons → ṃ, unconditional before any consonant"
+  },
+  {
+   "a": "सम्यक्",
+   "b": "ज्ञानम्",
+   "expect": "सम्यग्ज्ञानम्",
+   "note": "क्+voiced → ग् (samyak jñānam)"
+  },
+  {
+   "a": "सम्यक्",
+   "b": "दर्शनम्",
+   "expect": "सम्यग्दर्शनम्",
+   "note": "क्+voiced → ग्"
+  },
+  {
+   "a": "सम्यक्",
+   "b": "च",
+   "expect": "सम्यक्च",
+   "note": "क्+voiceless → stays क् (no voicing)"
+  },
+  {
+   "a": "वाक्",
+   "b": "मय",
+   "expect": "वाङ्मय",
+   "note": "क्+nasal → homorganic ङ्"
+  },
+  {
+   "a": "षट्",
+   "b": "भिः",
+   "expect": "षड्भिः",
+   "note": "ट्+voiced → ड्"
+  },
+  {
+   "a": "ते",
+   "b": "इति",
+   "expect": "तइति",
+   "note": "B2 ayādi e+V → a V"
+  },
+  {
+   "a": "रामाः",
+   "b": "गच्छन्ति",
+   "expect": "रामागच्छन्ति",
+   "note": "āḥ + voiced cons → ā"
+  },
+  {
+   "a": "बुद्धेः",
+   "b": "जायमानाः",
+   "expect": "बुद्धेर्जायमानाः",
+   "note": "eḥ + voiced cons → r (folio 699 regression)"
+  },
+  {
+   "a": "हरिः",
+   "b": "गच्छति",
+   "expect": "हरिर्गच्छति",
+   "note": "iḥ + voiced cons → r"
+  },
+  {
+   "a": "पुनः",
+   "b": "विस्तरेण",
+   "expect": "पुनर्विस्तरेण",
+   "note": "r-derived visarga (punar) + voiced cons → r, NOT o (corpus regression, distinct from rāmaḥ+gacchati→rāmo-)"
+  },
+  {
+   "a": "पुनः",
+   "b": "अपि",
+   "expect": "पुनरपि",
+   "note": "r-derived visarga + vowel → r (punar api), not punaḥ+a→o' hiatus"
+  },
+  {
+   "a": "अन्तः",
+   "b": "गतम्",
+   "expect": "अन्तर्गतम्",
+   "note": "r-derived visarga (antar) + voiced cons → r"
+  },
+  {
+   "a": "पुनः",
+   "b": "कदाचित्",
+   "expect": "पुनःकदाचित्",
+   "note": "r-derived visarga + voiceless cons → retained ः, same as general rule"
+  },
+  {
+   "a": "वायुः",
+   "b": "गच्छति",
+   "expect": "वायुर्गच्छति",
+   "note": "uḥ + voiced cons → r"
+  },
+  {
+   "a": "ज्ञानैः",
+   "b": "इति",
+   "expect": "ज्ञानैरिति",
+   "note": "aiḥ + vowel → r, r fuses as mātrā (folio 817 regression)"
+  },
+  {
+   "a": "हरिः",
+   "b": "अत्र",
+   "expect": "हरिरत्र",
+   "note": "iḥ + vowel → r (was garbage हरिोत्र)"
+  },
+  {
+   "a": "सः",
+   "b": "गच्छति",
+   "expect": "सगच्छति",
+   "note": "su-lopa: saḥ + voiced cons → sa"
+  },
+  {
+   "a": "सः",
+   "b": "करोति",
+   "expect": "सकरोति",
+   "note": "su-lopa: saḥ + voiceless cons → sa"
+  },
+  {
+   "a": "सः",
+   "b": "च",
+   "expect": "सच",
+   "note": "su-lopa: saḥ + palatal → sa (not saś-ca)"
+  },
+  {
+   "a": "एषः",
+   "b": "तत्",
+   "expect": "एषतत्",
+   "note": "su-lopa: eṣaḥ + cons → eṣa"
+  },
+  {
+   "a": "सः",
+   "b": "इति",
+   "expect": "सइति",
+   "note": "saḥ + vowel(≠a) → sa"
+  },
+  {
+   "a": "सः",
+   "b": "अयम्",
+   "expect": "सोयम्",
+   "note": "exception: saḥ + a → so’"
+  },
+  {
+   "a": "कस्यै",
+   "b": "एषः",
+   "expect": "कस्यायेषः",
+   "note": "āvādi: ai + vowel → āy (semivowel default): कस्यै एषः → कस्यायेषः"
+  },
+  {
+   "a": "तस्मै",
+   "b": "एव",
+   "expect": "तस्मायेव",
+   "note": "āvādi: ai + e → āy (semivowel)"
+  },
+  {
+   "a": "द्वौ",
+   "b": "इमौ",
+   "expect": "द्वाविमौ",
+   "note": "āvādi: au + i → āv (BG 15.16 द्वाविमौ)"
+  },
+  {
+   "a": "उभौ",
+   "b": "अपि",
+   "expect": "उभावपि",
+   "note": "āvādi: au + a → āv+a (NOT pūrvarūpa)"
+  },
+  {
+   "a": "तौ",
+   "b": "इति",
+   "expect": "ताविति",
+   "note": "āvādi: au + i → āv (semivowel form)"
+  },
+  {
+   "a": "तिष्ठन्",
+   "b": "इति",
+   "expect": "तिष्ठन्निति",
+   "note": "8.3.32 न् after short vowel doubles before vowel (folio 899 regression)"
+  },
+  {
+   "a": "तस्मिन्",
+   "b": "एव",
+   "expect": "तस्मिन्नेव",
+   "note": "8.3.32 short i + न् doubles"
+  },
+  {
+   "a": "रामान्",
+   "b": "इति",
+   "expect": "रामानिति",
+   "note": "long ā-final न् does NOT double"
+  },
+  {
+   "a": "जानामि",
+   "b": "इति",
+   "expect": "जानामीति",
+   "note": "savarṇa-dīrgha i+i → ī"
+  },
+  {
+   "a": "गच्छति",
+   "b": "इति",
+   "expect": "गच्छतीति",
+   "note": "savarṇa-dīrgha i+i → ī"
+  },
+  {
+   "a": "गुरु",
+   "b": "उक्तम्",
+   "expect": "गुरूक्तम्",
+   "note": "savarṇa-dīrgha u+u → ū"
+  },
+  {
+   "a": "महा",
+   "b": "ऋषि",
+   "expect": "महर्षि",
+   "note": "guṇa ā+ṛ → ar (अर् cluster, not a mātrā)"
+  },
+  {
+   "a": "परम",
+   "b": "ऋषि",
+   "expect": "परमर्षि",
+   "note": "guṇa a+ṛ → ar (fixes former R→ा bug)"
+  },
+  {
+   "a": "इति",
+   "b": "एव",
+   "expect": "इत्येव",
+   "note": "yaṇ i+e (dissimilar) stays → y"
+  },
+  {
+   "a": "इति",
+   "b": "अपि",
+   "expect": "इत्यपि",
+   "note": "yaṇ i+a (dissimilar) → y"
+  },
+  {
+   "a": "अविशेषे",
+   "b": "अनुष्ठान",
+   "expect": "अविशेषेनुष्ठान",
+   "note": "pūrvarūpa e+a"
+  },
+  {
+   "a": "अग्निहोत्रादीनां",
+   "b": "एव",
+   "expect": "अग्निहोत्रादीनामेव",
+   "note": "-ṃ(=-m)+V → m+mātrā"
+  },
+  {
+   "a": "अनुभवात्",
+   "b": "अप्रसिद्धः",
+   "expect": "अनुभवादप्रसिद्धः",
+   "note": "jaś-tva: त्→द् before vowel"
+  },
+  {
+   "a": "तत्",
+   "b": "एव",
+   "expect": "तदेव",
+   "note": "jaś-tva: त्→द्"
+  },
+  {
+   "a": "वाक्",
+   "b": "ईशः",
+   "expect": "वागीशः",
+   "note": "jaś-tva: क्→ग्"
+  },
+  {
+   "a": "तान्",
+   "b": "अपि",
+   "expect": "तानपि",
+   "note": "न does not voice (halant+V → C+mātrā)"
+  },
+  {
+   "a": "मनस्",
+   "b": "आदीनि",
+   "expect": "मनआदीनि",
+   "note": "word-final bare स् rutva's to विसर्ग then hiatus (Zenodo-corpus reconciliation, 2026-07-25): स्+V(non-a) → same as मनः+आदीनि"
+  },
+  {
+   "a": "भूयस्",
+   "b": "अपि",
+   "expect": "भूयोपि",
+   "note": "word-final bare स् → विसर्ग then aḥ+a→o' (no literal avagraha inserted, matching the existing सः+अयम्→सोयम् convention)"
+  },
+  {
+   "a": "पुनर्",
+   "b": "तत्",
+   "expect": "पुनस्तत्",
+   "note": "bare-र् rAvyaya spelling (पुनर् not पुनः) → same र्-derived visarga treatment as पुनः+तत्"
+  },
+  {
+   "a": "पुनर्",
+   "b": "च",
+   "expect": "पुनश्च",
+   "note": "bare-र् rAvyaya spelling, ḥ+c → ś"
+  },
+  {
+   "a": "अहर्",
+   "b": "एव",
+   "expect": "अहरेव",
+   "note": "regression guard: बरे र् NOT in the rAvyaya list keeps its र् before a vowel (day/अहन्-अहर्) — must NOT redirect to विसर्ग (a blanket-र् rule was tried and rejected: 50-case regression)"
+  },
+  {
+   "a": "तद्",
+   "b": "परः",
+   "expect": "तत्परः",
+   "note": "चर्त्व (8.4.55): remaining voiceless stops (क/ख/प/फ) devoice त्/द् → त्, beyond the already-covered श्चुत्व/ष्टुत्व/ल/ह/न-म/jaśtva pairs"
+  },
+  {
+   "a": "तद्",
+   "b": "कारणम्",
+   "expect": "तत्कारणम्",
+   "note": "चर्त्व: द्+क → त्"
+  },
+  {
+   "a": "श्रद्धावान्",
+   "b": "लभते",
+   "expect": "श्रद्धावांल्लभते",
+   "note": "न्+ल → ं + doubled ल्ल (Zenodo-corpus reconciliation, 2026-07-25)"
+  }
+ ],
+ "toDeva": [
+  {
+   "in": "kṛṣṇa",
+   "expect": "कृष्ण",
+   "note": "IAST: vocalic ṛ + ṣ"
+  },
+  {
+   "in": "rāmāyaṇa",
+   "expect": "रामायण",
+   "note": "IAST: ā + ṇ"
+  },
+  {
+   "in": "śāstra",
+   "expect": "शास्त्र",
+   "note": "IAST: ś + conjunct"
+  },
+  {
+   "in": "dharmaḥ",
+   "expect": "धर्मः",
+   "note": "IAST: visarga ḥ"
+  },
+  {
+   "in": "saṃskṛta",
+   "expect": "संस्कृत",
+   "note": "IAST: anusvāra ṃ"
+  },
+  {
+   "in": "Kṛṣṇa",
+   "expect": "कृष्ण",
+   "note": "IAST is case-insensitive (unlike ITRANS)"
+  },
+  {
+   "in": "kṣetra",
+   "expect": "क्षेत्र",
+   "note": "IAST: k+ṣ conjunct via halant, no special-case key needed"
+  },
+  {
+   "in": "jñāna",
+   "expect": "ज्ञान",
+   "note": "IAST: j+ñ conjunct via halant"
+  },
+  {
+   "in": "aṅga",
+   "expect": "अङ्ग",
+   "note": "IAST: ṅ (velar nasal)"
+  },
+  {
+   "in": "yajña",
+   "expect": "यज्ञ",
+   "note": "IAST: j+ñ conjunct mid-word"
+  },
+  {
+   "in": "rama",
+   "expect": "रम",
+   "note": "overlap subset (short vowels + plain consonants) with no diacritic → ITRANS path, byte-identical either way"
+  },
+  {
+   "in": "kRRiShNa",
+   "expect": "कृष्ण",
+   "note": "ITRANS regression: unaffected by IAST addition"
+  },
+  {
+   "in": "dharma.h",
+   "expect": "धर्म्",
+   "note": "ITRANS regression: explicit halant unaffected"
+  },
+  {
+   "in": "chatuH",
+   "expect": "चतुः",
+   "note": "standard ITRANS: ch=च (चतुः) — purist ITRANS fix #1"
+  },
+  {
+   "in": "gachChati",
+   "expect": "गच्छति",
+   "note": "standard ITRANS: ch=च, Ch=छ → गच्छति (#1)"
+  },
+  {
+   "in": "pRRichChati",
+   "expect": "पृच्छति",
+   "note": "standard ITRANS: च=ch, छ=Ch → पृच्छति (#1)"
+  },
+  {
+   "in": "vr̥",
+   "expect": "वृ",
+   "note": "ISO 15919 ring-below vocalic r (U+0325) → IAST ṛ → वृ; Windows/IAST vṛ→व्र fix #2"
+  },
+  {
+   "in": "राम",
+   "expect": "राम",
+   "note": "Devanāgarī passthrough unaffected"
+  }
+ ],
+ "paritySample": [
+  "सन्न्यस्त",
+  "संन्यस्त",
+  "रामम्",
+  "एवम्",
+  "सङ्ग्रहः",
+  "अग्निहोत्रादीनामेव",
+  "धर्मक्षेत्रे",
+  "तच्च",
+  "किंचित्",
+  "तस्मान्न",
+  "अदेङ् गुणः",
+  "पीङ् पाने"
+ ],
+ "unitMatch": [
+  {
+   "id": "cooccur-unit-compound-medial",
+   "query": "mahat pratyak",
+   "mode": "cooccur",
+   "surface": "सूक्ष्मतरं महत्प्रत्यगात्मभूतं च मनः",
+   "shouldMatch": true,
+   "note": "synthetic, corpus-independent lock on the coMatch fix: प्रत्यक् is compound-medial (महत्-प्रत्यक्-आत्मभूतम्) and sandhi-voiced (jaśtva क्→ग्) — needs both the wide-tier variant AND the dropped boundary check"
+  },
+  {
+   "id": "cooccur-unit-no-false-match",
+   "query": "pratyak agni",
+   "mode": "cooccur",
+   "surface": "सूक्ष्मतरं महत्प्रत्यगात्मभूतं च मनः",
+   "shouldMatch": false,
+   "note": "guard: dropping the boundary requirement must not make coMatch match on ANYTHING — a genuinely absent second term (अग्नि) must still fail"
+  },
+  {
+   "id": "kurvan-doubled",
+   "query": "kurvan",
+   "surface": "कुर्वन्नेवेह",
+   "shouldMatch": true,
+   "note": "word-final न् doubled before a vowel → anusvāra in text; a bare query must still find its own word"
+  },
+  {
+   "id": "kurvan-eva",
+   "query": "kurvan eva",
+   "surface": "कुर्वन्नेवेह",
+   "shouldMatch": true
+  },
+  {
+   "id": "kurva-prefix",
+   "query": "kurva",
+   "surface": "कुर्वन्नेवेह",
+   "shouldMatch": true
+  },
+  {
+   "id": "nasalA-guard",
+   "query": "san",
+   "surface": "सन्नेव",
+   "shouldMatch": false,
+   "note": "guard: short word gets NO anusvāra form (would flood); सं must not match संनेव"
+  },
+  {
+   "id": "arthAn-nasal-cons",
+   "query": "svayambhUH yAthAtathyataH arthAn",
+   "surface": "स्वयम्भूर्याथातथ्यतोऽर्थान्‌ व्यदधात्",
+   "shouldMatch": true,
+   "note": "last word अर्थान् न् → anusvāra before a consonant across a space (व्यदधात्); multi-word right-edge nasal (Īśā Up. 8)"
+  },
+  {
+   "id": "artham-precise-miss",
+   "query": "artham",
+   "surface": "उक्तमेवार्थमुपसञ्जिहीर्षुर्मन्त्रो",
+   "shouldMatch": false,
+   "note": "precise: leading अ absorbed (एव+अर्थ→एवार्थ) + short-अ ≥5 gate → correctly NO exact match (ार्थ floods ~21% of corpus)"
+  },
+  {
+   "id": "artham-wide-hit",
+   "query": "artham",
+   "surface": "उक्तमेवार्थमुपसञ्जिहीर्षुर्मन्त्रो",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "high-recall fallback: gate dropped → finds the sandhi-fused अर्थम् (एवार्थमु)"
+  },
+  {
+   "id": "astriyAM-precise-miss",
+   "query": "astriyAM",
+   "surface": "गुणेऽस्त्रियाम्",
+   "shouldMatch": false,
+   "note": "precise: leading अ elided by pūrvarūpa (गुणे+अस्त्रि→गुणेऽस्त्रि, avagraha dropped) → no exact; elided form is wide-only"
+  },
+  {
+   "id": "astriyAM-wide-hit",
+   "query": "astriyAM",
+   "surface": "गुणेऽस्त्रियाम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "high-recall: े/ो-anchored elided form finds गुणेऽस्त्रियाम् (avagraha/pūrvarūpa)"
+  },
+  {
+   "id": "astriyAM-no-false-strii",
+   "query": "astriyAM",
+   "surface": "बहुषु स्त्रियाम्",
+   "wide": true,
+   "shouldMatch": false,
+   "note": "anchored elided form must NOT match standalone स्त्री (not preceded by e/o) — अस्त्री ≠ स्त्री; precision guard for the antonym trap"
+  },
+  {
+   "id": "exact-match-embedded-hit",
+   "query": "brahma",
+   "mode": "exact",
+   "surface": "ब्रह्मविद्यां जानाति",
+   "shouldMatch": true,
+   "note": "exact-match is a plain literal substring find (like the browser's own Find) — no word-boundary restriction, so ब्रह्म embedded as the first member of the compound ब्रह्मविद्यां still matches; समास is unmarked by spaces in Devanāgarī, so whole-word anchoring would hide real matches"
+  },
+  {
+   "id": "akAyam-mlsBare-wide-hit",
+   "query": "akAyam",
+   "surface": "पर्यगाच्छुक्रमकायमव्रणमस्नाविरं शुद्धमपापविद्धम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "leading अ of अकायम् is silently ABSORBED into the preceding word's bare म् (शुक्रम्+अकायम्→शुक्रमकायम्, no visible trace at all — different from mlsA's vowel-merge and mlsE's े/ो-elision); mlsBare, glued to a preceding CONSONANT specifically (Īśā Up. 8)"
+  },
+  {
+   "id": "akAyam-mlsBare-no-false-standalone",
+   "query": "akAyam",
+   "surface": "इति काय एव",
+   "wide": true,
+   "shouldMatch": false,
+   "note": "regression guard: मlsBare requires the preceding character be a plain CONSONANT (isCons) — काय here is a standalone, space-preceded word (nothing was absorbed), not glued onto anything, so it must NOT match"
+  },
+  {
+   "id": "shchh-wide-hit",
+   "query": "shukram akAyam",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "ścutva श→छ: preceding paryagāt's त्+श→च्छ, so shukram is written च्छुक्रम् — left-edge consonant mutation (Īśā Up. 8)"
+  },
+  {
+   "id": "shchh-precise-miss",
+   "query": "shukram akAyam",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "shouldMatch": false,
+   "note": "tier: sh→chh is a speculative neighbor-fusion candidate → wide/dashed only, absent from precise/solid"
+  },
+  {
+   "id": "mlsG-wide-hit",
+   "query": "upAdhibhUtayoH vyAkriyamANayoH",
+   "surface": "परमात्मोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "guṇa a+u→o: preceding paramātma fuses upādhi's u into o (…mopādhi) — left-edge vowel mutation (BU 2.4.10)"
+  },
+  {
+   "id": "mlsG-precise-miss",
+   "query": "upAdhibhUtayoH vyAkriyamANayoH",
+   "surface": "परमात्मोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "shouldMatch": false,
+   "note": "tier: mlsG guṇa/vṛddhi lead is wide/dashed only"
+  },
+  {
+   "id": "lastStopNasal-wide-hit",
+   "query": "sa vAk",
+   "surface": "सवाङ्मय",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "right-edge stop→nasal: vāk+maya→vāṅmaya (क्→ṅ), matched via body+anusvāra वां"
+  },
+  {
+   "id": "lastStopNasal-precise-miss",
+   "query": "sa vAk",
+   "surface": "सवाङ्मय",
+   "shouldMatch": false,
+   "note": "tier: new right-edge consonant candidates are wide/dashed only"
+  },
+  {
+   "id": "swRight-savarna-wide-hit",
+   "query": "gachChati",
+   "surface": "गच्छतीति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "single-word right-edge savarṇa-dīrgha: gacchati + following iti → gacchatīti (i+i→ī); ≥5 stem gate"
+  },
+  {
+   "id": "swRight-savarna-precise-miss",
+   "query": "gachChati",
+   "surface": "गच्छतीति",
+   "shouldMatch": false,
+   "note": "tier: single-word right-edge is wide/dashed only"
+  },
+  {
+   "id": "swRight-tat-ungated",
+   "query": "tat",
+   "surface": "तदेव",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "single-word right-edge is UNGATED (never-suppress): even the 2-char pronoun tat surfaces its jaśtva form तद, so tat matches तदेव in the wide/dashed tier. It floods (~60% of corpus) — accepted; the user refines. Precise/solid is unaffected."
+  },
+  {
+   "id": "tatshrI-no-overmatch",
+   "query": "tat shrI",
+   "surface": "तच्छ्रोत्रेणाजिघृक्षत्तन्नाशक्नोच्छ्रोत्रेण",
+   "wide": true,
+   "shouldMatch": false,
+   "note": "guard: lastCore strips only ā (not ī), so shrI cores to श्री (not श्र) → joinedCore तच्छ्री, which does NOT prefix-match तच्छ्रोत्रेण (शrotra ≠ śrī). Kills the short-onset over-match (Aitareya 1.3.6)"
+  },
+  {
+   "id": "tatshrI-genuine-preserved",
+   "query": "tat shrI",
+   "surface": "तच्छ्रीमत्",
+   "shouldMatch": true,
+   "note": "recall preserved: a genuine tat+shrI → तच्छ्री surface still matches (only the spurious śrotra prefix was removed)"
+  },
+  {
+   "id": "vidyA-single-guNa-wide",
+   "query": "vidyA",
+   "surface": "विद्योदेति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "single-word right-edge a/ā-guṇa (vidyA + following udeti → vidyodeti, ā+u→o) via lastCore's ā-strip wired into swRight (approach B)"
+  },
+  {
+   "id": "vidyA-single-precise-miss",
+   "query": "vidyA",
+   "surface": "विद्योदेति",
+   "shouldMatch": false,
+   "note": "tier: single-word right-edge is wide/dashed only"
+  },
+  {
+   "id": "jAnAmi-single-yaN-wide",
+   "query": "jAnAmi",
+   "surface": "जानाम्यत्र",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "single-word right-edge yaṇ (jAnAmi + following atra → jAnāmyatra, i→y) via lastYan in swRight; candidate normalized so म्य folds to match"
+  },
+  {
+   "id": "evam-mls-dashed-wide",
+   "query": "evam",
+   "surface": "वामदेव",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "mls (ेव, the query's vowel as a mātrā on a preceding consonant) coincides with देव in वामदेव — a neighbor-fusion possibility, surfaced in the wide/dashed tier"
+  },
+  {
+   "id": "evam-mls-not-solid",
+   "query": "evam",
+   "surface": "वामदेव",
+   "shouldMatch": false,
+   "note": "tier: mls/mlsA/mlsBare DEMOTED to dashed (wide-only) — a coincidental left-edge fusion like ेव must NOT be a SOLID hit (governing principle: neighbor-fusion → dashed)"
+  },
+  {
+   "id": "evam-standalone-solid",
+   "query": "evam",
+   "surface": "एवमेव हि",
+   "shouldMatch": true,
+   "note": "the actual word एवम् still matches in precise/SOLID via its stem (एव), unaffected by the mls demotion — only coincidental fusions moved to dashed"
+  },
+  {
+   "id": "vAk-single-nasal-wide",
+   "query": "vAk",
+   "surface": "सिद्धम् ; वाङ्मयत्वम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "single-word stop→nasal right-edge: vāk+maya→vāṅmaya (क्→ṅ), via lastStopNasal (वां) now included in swRight; ≥3-stem gate admits vāk (Chāndogya 1.1.6)"
+  },
+  {
+   "id": "vAk-single-precise-miss",
+   "query": "vAk",
+   "surface": "वाङ्मयत्वम्",
+   "shouldMatch": false,
+   "note": "tier: single-word right-edge is wide/dashed only"
+  },
+  {
+   "id": "shukram-single-shchh-wide",
+   "query": "shukram",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "fix #3: single-word shukram — sh→chh left-edge PLUS the bare-म variant (च्छुक्रम, म before an out-of-query vowel) — now finds Īśā 1.8, parity with the 2-word 'shukram akAyam'"
+  },
+  {
+   "id": "shukram-single-precise-miss",
+   "query": "shukram",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "shouldMatch": false,
+   "note": "tier: left-edge fusion is wide/dashed only"
+  },
+  {
+   "id": "upanishad-single-shchh-wide",
+   "query": "upaniShad",
+   "surface": "उपनिषच्छब्दवाच्याम्",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "lastTbody/lastTvars only checked word-final त्, missing द् — sandhiJoin treats them identically for ścutva/ṣṭutva/latva (उपनिषद्+शब्द→उपनिषच्छब्द, त्/द्+श→च्छ), so a द्-final query like upaniShad never got its wide-tier candidates at all (found via real Ka Up. bhāṣya search, 2026-07-25)"
+  },
+  {
+   "id": "upanishad-single-precise-miss",
+   "query": "upaniShad",
+   "surface": "उपनिषच्छब्दवाच्याम्",
+   "shouldMatch": false,
+   "note": "tier: single-word right-edge is wide/dashed only"
+  },
+  {
+   "id": "aspirate-jastva-single-wide",
+   "query": "sanAth",
+   "surface": "सनादस्ति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "the file-level JAS candidate map (feeding lastJas/swRight) only had the 5 UNASPIRATED voiceless stops (क/च/ट/त/प), missing their aspirated counterparts (ख/छ/ठ/थ/फ) that sandhiJoin's own inline jas map already handled — a थ्-final query like sanAth never got its voiced (सनाद) right-edge candidate at all (found while auditing the upaniShad/upaniShat bug for the same class of gap, 2026-07-25)"
+  },
+  {
+   "id": "aspirate-jastva-single-precise-miss",
+   "query": "sanAth",
+   "surface": "सनादस्ति",
+   "shouldMatch": false,
+   "note": "tier: single-word right-edge is wide/dashed only"
+  },
+  {
+   "id": "leftright-upAdhi-yan-wide",
+   "query": "upAdhi",
+   "surface": "परमोपाध्यस्ति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: guṇa left-edge (उ→ो, parama+upAdhi) crossed with yaṇ on upAdhi's OWN tail (i→y) — paramopādhyasti"
+  },
+  {
+   "id": "leftright-upAdhi-yan-precise-miss",
+   "query": "upAdhi",
+   "surface": "परमोपाध्यस्ति",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-upAdhi-savarna-wide",
+   "query": "upAdhi",
+   "surface": "परमोपाधीति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: guṇa left-edge crossed with savarṇa-dīrgha on the tail (i+i→ī) — paramopādhīti"
+  },
+  {
+   "id": "leftright-upAdhi-savarna-precise-miss",
+   "query": "upAdhi",
+   "surface": "परमोपाधीति",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-udyat-jastva-wide",
+   "query": "udyat",
+   "surface": "परमोद्यदपि",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: guṇa left-edge (उ→ो, parama+udyat) crossed with jaśtva on the tail (त्→द्) — paramodyadapi"
+  },
+  {
+   "id": "leftright-udyat-jastva-precise-miss",
+   "query": "udyat",
+   "surface": "परमोद्यदपि",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-sharman-doubling-wide",
+   "query": "sharman",
+   "surface": "तच्छर्मन्निति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: sh→chh left-edge (tat+sharman) crossed with न्-doubling→anusvāra on the tail (nasalAnusvara) — tacCharmanniti"
+  },
+  {
+   "id": "leftright-sharman-doubling-precise-miss",
+   "query": "sharman",
+   "surface": "तच्छर्मन्निति",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-shishuH-visarga-wide",
+   "query": "shishuH",
+   "surface": "तच्छिशुरिति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: sh→chh left-edge (tat+shishuH) crossed with the a-class core strip on the tail (visarga-stripped stem is a clean prefix of the र-outcome) — tacChishuriti"
+  },
+  {
+   "id": "leftright-shishuH-visarga-precise-miss",
+   "query": "shishuH",
+   "surface": "तच्छिशुरिति",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-adri-mlsBare-wide",
+   "query": "adri",
+   "surface": "एतदद्रीव",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: mlsBare (etad+adri, अ absorbed with no trace) crossed with savarṇa-dīrgha on adri's OWN tail (i+i→ī) — etadadrIva"
+  },
+  {
+   "id": "leftright-adri-mlsBare-precise-miss",
+   "query": "adri",
+   "surface": "एतदद्रीव",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-adri-mlsA-wide",
+   "query": "adri",
+   "surface": "परमाद्रीव",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: mlsA (paramA+adri, अ+आ→आ savarṇa) crossed with savarṇa-dīrgha on adri's OWN tail (i+i→ī) — paramAdrIva"
+  },
+  {
+   "id": "leftright-adri-mlsA-precise-miss",
+   "query": "adri",
+   "surface": "परमाद्रीव",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "leftright-indu-mls-wide",
+   "query": "indu",
+   "surface": "वागिन्दूदेति",
+   "wide": true,
+   "shouldMatch": true,
+   "note": "v1.3.2 LEFT×RIGHT: mls (vAk+indu, इ absorbed as a mātrā after jaśtva क्→ग्) crossed with savarṇa-dīrgha on indu's OWN tail (u+u→ū) — vAgindUdeti"
+  },
+  {
+   "id": "leftright-indu-mls-precise-miss",
+   "query": "indu",
+   "surface": "वागिन्दूदेति",
+   "shouldMatch": false,
+   "note": "tier: LEFT×RIGHT composition is wide/dashed only"
+  },
+  {
+   "id": "phrase-absorbed-a-wide",
+   "query": "anyA vAchaH vimu~nchatha",
+   "wide": true,
+   "surface": "तमेवैकं जानथ आत्मानमन्या वाचो विमुञ्चथामृतस्यैष सेतुः",
+   "shouldMatch": true,
+   "note": "Mu.Up. 2.2.5 (2026-10-20): multi-word phrase whose first word's अ is absorbed after a consonant (आत्मानम्+अन्या) — found in the WIDE (possible) tier"
+  },
+  {
+   "id": "phrase-absorbed-a-precise-miss",
+   "query": "anyA vAchaH vimu~nchatha",
+   "surface": "तमेवैकं जानथ आत्मानमन्या वाचो विमुञ्चथामृतस्यैष सेतुः",
+   "shouldMatch": false,
+   "note": "tier: absorbed/elided-अ phrase forms stay OUT of the precise tier — dropping the अ erases the negation prefix (अविज्ञात इति → मन्ताऽविज्ञातो विज्ञातेति), ~40% wrong in a 200-phrase sample"
+  },
+  {
+   "id": "phrase-elided-a-wide",
+   "query": "anyA vAchaH vimu~nchatha",
+   "wide": true,
+   "surface": "ते तेऽन्या वाचो विमुञ्चथ इति",
+   "shouldMatch": true,
+   "note": "e/o + अ elision (तेऽन्या) for a multi-word phrase, wide tier"
+  },
+  {
+   "id": "phrase-absorbed-a-needs-consonant",
+   "query": "anyA vAchaH vimu~nchatha",
+   "wide": true,
+   "surface": "इति न्या वाचो विमुञ्चथ",
+   "shouldMatch": false,
+   "note": "glued gate: a bare न्या… after a SPACE is not an absorbed अ"
+  }
+ ],
+ "unitSpans": [
+  {
+   "id": "virama-in-highlight",
+   "query": "pUrvamarShat",
+   "surface": "पूर्वमर्षत्",
+   "expect": "पूर्वमर्षत्",
+   "note": "stem strips trailing ्; highlight must extend to cover it"
+  },
+  {
+   "id": "kurvan-highlight",
+   "query": "kurvan",
+   "surface": "कुर्वन्नेवेह",
+   "expect": "कुर्वन्",
+   "note": "anusvāra form maps back to कुर्वन् incl. its virāma"
+  },
+  {
+   "id": "arthAn-no-trailing-space",
+   "query": "svayambhUH yAthAtathyataH arthAn",
+   "surface": "स्वयम्भूर्याथातथ्यतोऽर्थान्‌ व्यदधात्",
+   "expect": "स्वयम्भूर्याथातथ्यतोऽर्थान्",
+   "note": "cross-space anusvāra match must not leave a trailing space in the highlight"
+  },
+  {
+   "id": "astriyAM-wide-span",
+   "query": "astriyAM",
+   "surface": "गुणेऽस्त्रियाम्",
+   "wide": true,
+   "expect": "ेऽस्त्रियाम्",
+   "note": "leading-अ-elided form is े/ो-ANCHORED (won't false-match standalone स्त्री); highlight includes anchor े, avagraha, and the word-final म्"
+  },
+  {
+   "id": "final-m-highlight",
+   "query": "astriyAM",
+   "surface": "अस्त्रियाम्",
+   "expect": "अस्त्रियाम्",
+   "note": "word-final म् (folds to anusvāra, stripped by the stem) must be pulled back into the highlight"
+  },
+  {
+   "id": "exact-match-span-embedded",
+   "query": "brahma",
+   "mode": "exact",
+   "surface": "ब्रह्मविद्यां जानाति",
+   "expect": "ब्रह्म",
+   "note": "live extension highlighting must also find the compound-embedded occurrence, matching matches()/exact-match-embedded-hit"
+  },
+  {
+   "id": "last-word-bare-m-rightedge",
+   "query": "paryagAt shukram akAyam",
+   "surface": "स पर्यगाच्छुक्रमकायमव्रणमस्नाविरं शुद्धमपापविद्धम्",
+   "expect": "पर्यगाच्छुक्रमकायम",
+   "note": "last query word akAyam (ends म्/ं) followed by out-of-query vowel-initial avraNam: म्+V→bare म+mātra(V), not anusvāra — must reach the full word's own म, not fall back to the bare stem अकाय (Īśā Up. 8)"
+  },
+  {
+   "id": "matraLead-start-pulled-back",
+   "query": "ittham bhU",
+   "surface": "तमित्थंभूतं पर",
+   "expect": "मित्थंभू",
+   "note": "query's leading vowel इ is written as the mātrā ि fused onto the PRECEDING out-of-query word's final म् (tam+itthaMbhUtam); highlight must extend start back onto that म so it doesn't begin on a dangling combining mark"
+  },
+  {
+   "id": "mlsE-anchor-start-not-pulled-back",
+   "query": "astriyAM",
+   "surface": "गुणेऽस्त्रियाम्",
+   "wide": true,
+   "expect": "ेऽस्त्रियाम्",
+   "note": "regression guard: extendStart must NOT touch the deliberate े/ो anchor of the leading-अ-elided (mlsE) field — only matraLead-style (mls/mlsA) dangling mātrās get pulled back"
+  },
+  {
+   "id": "shchh-span",
+   "query": "shukram akAyam",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "wide": true,
+   "expect": "च्छुक्रमकायम",
+   "note": "sh→chh left-edge: extension highlights the च्छ-form fused surface (Īśā Up. 8)"
+  },
+  {
+   "id": "mlsG-span",
+   "query": "upAdhibhUtayoH vyAkriyamANayoH",
+   "surface": "परमात्मोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "wide": true,
+   "expect": "ोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "note": "guṇa lead: mātrā-initial (ो sits on the preceding word), noStart-anchored like mlsE (BU 2.4.10)"
+  },
+  {
+   "id": "lastStopNasal-span",
+   "query": "sa vAk",
+   "surface": "सवाङ्मय",
+   "wide": true,
+   "expect": "सवाङ्",
+   "note": "right-edge stop→nasal highlight (vāṅ from vāk)"
+  },
+  {
+   "id": "vidyA-single-span",
+   "query": "vidyA",
+   "surface": "विद्योदेति",
+   "wide": true,
+   "expect": "विद्यो",
+   "note": "single-word a/ā-guṇa right-edge highlight (approach B)"
+  },
+  {
+   "id": "jAnAmi-single-span",
+   "query": "jAnAmi",
+   "surface": "जानाम्यत्र",
+   "wide": true,
+   "expect": "जानाम्य",
+   "note": "single-word yaṇ right-edge highlight"
+  },
+  {
+   "id": "vAk-single-span",
+   "query": "vAk",
+   "surface": "वाङ्मयत्वम्",
+   "wide": true,
+   "expect": "वाङ्",
+   "note": "single-word stop→nasal right-edge highlight (vāṅ from vāk)"
+  },
+  {
+   "id": "shukram-single-span",
+   "query": "shukram",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "wide": true,
+   "expect": "च्छुक्रम",
+   "note": "single-word shukram bare-म left-edge highlight (fix #3)"
+  },
+  {
+   "id": "leftright-upAdhi-yan-span",
+   "query": "upAdhi",
+   "surface": "परमोपाध्यस्ति",
+   "wide": true,
+   "expect": "ोपाध्य",
+   "note": "v1.3.2 LEFT×RIGHT: guṇa lead × yaṇ tail highlight"
+  },
+  {
+   "id": "leftright-upAdhi-savarna-span",
+   "query": "upAdhi",
+   "surface": "परमोपाधीति",
+   "wide": true,
+   "expect": "ोपाधी",
+   "note": "v1.3.2 LEFT×RIGHT: guṇa lead × savarṇa-dīrgha tail highlight"
+  },
+  {
+   "id": "leftright-udyat-jastva-span",
+   "query": "udyat",
+   "surface": "परमोद्यदपि",
+   "wide": true,
+   "expect": "ोद्यद",
+   "note": "v1.3.2 LEFT×RIGHT: guṇa lead × jaśtva tail highlight"
+  },
+  {
+   "id": "leftright-sharman-doubling-span",
+   "query": "sharman",
+   "surface": "तच्छर्मन्निति",
+   "wide": true,
+   "expect": "च्छर्मन्",
+   "note": "v1.3.2 LEFT×RIGHT: sh→chh lead × न्-doubling tail highlight (maps back through normalize()'s anusvāra collapse to the real doubled-न् surface)"
+  },
+  {
+   "id": "leftright-shishuH-visarga-span",
+   "query": "shishuH",
+   "surface": "तच्छिशुरिति",
+   "wide": true,
+   "expect": "च्छिशु",
+   "note": "v1.3.2 LEFT×RIGHT: sh→chh lead × a-class core-strip tail highlight"
+  },
+  {
+   "id": "leftright-adri-mlsBare-span",
+   "query": "adri",
+   "surface": "एतदद्रीव",
+   "wide": true,
+   "expect": "द्री",
+   "note": "v1.3.2 LEFT×RIGHT: mlsBare × savarṇa-dīrgha tail highlight (glued-gated, like mlsBare itself)"
+  },
+  {
+   "id": "leftright-adri-mlsA-span",
+   "query": "adri",
+   "surface": "परमाद्रीव",
+   "wide": true,
+   "expect": "ाद्री",
+   "note": "v1.3.2 LEFT×RIGHT: mlsA × savarṇa-dīrgha tail highlight"
+  },
+  {
+   "id": "leftright-indu-mls-span",
+   "query": "indu",
+   "surface": "वागिन्दूदेति",
+   "wide": true,
+   "expect": "िन्दू",
+   "note": "v1.3.2 LEFT×RIGHT: mls × savarṇa-dīrgha tail highlight"
+  }
+ ],
+ "unitSnippet": [
+  {
+   "id": "snippetAny-picks-longest-not-first",
+   "query": "paryagAt shukram akAyam",
+   "surface": "स पर्यगाच्छुक्रमकायमव्रणमस्नाविरं शुद्धमपापविद्धम्",
+   "expect": "पर्यगाच्छुक्रमकायम",
+   "note": "search.html's snippet() path (snippetAny) must pick the LONGEST matching candidate in ex.combos, not just the first one found in array order — a shorter stem-based candidate (…अकाय) appears earlier than the fixed full-word one (…अकायम्), so a first-match-wins bug here reintroduced the same missing-म bug that findSpans() already fixed (Īśā Up. 8)"
+  },
+  {
+   "id": "shchh-snippet",
+   "query": "shukram akAyam",
+   "surface": "सपर्यगाच्छुक्रमकायमव्रणम्",
+   "wide": true,
+   "expect": "च्छुक्रमकायम",
+   "note": "search.html path (snippetAny) highlights the sh→chh fused surface"
+  },
+  {
+   "id": "mlsG-snippet",
+   "query": "upAdhibhUtayoH vyAkriyamANayoH",
+   "surface": "परमात्मोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "wide": true,
+   "expect": "ोपाधिभूतयोर्व्याक्रियमाणयोः",
+   "note": "search.html path highlights the guṇa lead"
+  },
+  {
+   "id": "leftright-sharman-doubling-snippet",
+   "query": "sharman",
+   "surface": "तच्छर्मन्निति",
+   "wide": true,
+   "expect": "च्छर्मन्",
+   "note": "search.html path (snippetAny) highlights the v1.3.2 LEFT×RIGHT sh→chh × न्-doubling composition"
+  },
+  {
+   "id": "leftright-adri-mlsBare-snippet",
+   "query": "adri",
+   "surface": "एतदद्रीव",
+   "wide": true,
+   "expect": "द्री",
+   "note": "search.html path highlights the v1.3.2 mlsBare × savarṇa-dīrgha composition (glued-gated)"
+  },
+  {
+   "id": "leftright-indu-mls-snippet",
+   "query": "indu",
+   "surface": "वागिन्दूदेति",
+   "wide": true,
+   "expect": "िन्दू",
+   "note": "search.html path highlights the v1.3.2 mls × savarṇa-dīrgha composition"
+  },
+  {
+   "id": "lastMBare-endM-snippet",
+   "query": "upaniShadam",
+   "wide": true,
+   "surface": "उपनिषदमधीमहे",
+   "expect": "उपनिषदम",
+   "note": "found 2026-07-29 (Ka Up. intro bhāṣya, Harsha): उपनिषदम्+अधीमहे → उपनिषदमधीमहे (lastMBare — the म् loses its halant with no visible trace, absorbed into अधीमहे's own अ). Stem-match ('उपनिषद') stopped one character short of the म् the user actually searched for. Fixed via a new expectedNasal param threaded snippet→snippetAny→wrap→extendEnd: only extend past a bare nasal when the QUERY's own last word is known (via its normalized trailing ं) to end in म्, so unrelated bare nasals are never swallowed"
+  },
+  {
+   "id": "lastMBare-noEndM-precise-miss",
+   "query": "upaniShad",
+   "wide": true,
+   "surface": "उपनिषदमधीमहे",
+   "expect": "उपनिषद",
+   "note": "guard: a query WITHOUT the final म् must NOT extend into the following bare म — the expectedNasal gate is query-specific, not a blanket bare-nasal grab"
+  },
+  {
+   "id": "phrase-absorbed-a-snippet",
+   "query": "anyA vAchaH vimu~nchatha",
+   "wide": true,
+   "surface": "तमेवैकं जानथ आत्मानमन्या वाचो विमुञ्चथामृतस्यैष सेतुः",
+   "expect": "न्या वाचो विमुञ्चथा",
+   "note": "search.html path highlights the possible-tier absorbed-अ phrase (so its ग्रन्थाः link carries ?hl=); extendEnd swallows the fused ा as usual"
+  }
+ ]
+}
