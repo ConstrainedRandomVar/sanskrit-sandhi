@@ -14,6 +14,8 @@
 //   long ones). Spans may OVERLAP where a junction merged two sounds into one akṣara (ते|नेशा: न is in both तेन and ईशा).
 // piecePortion(P, pieces, a, b) → [start, end) of the run a..b, akṣara-safe, or null (pieces don't line up with the print: a misprint or a
 //   bad split → mark nothing, exact or nothing #9e).
+// piecePortion(P, pieces, a, b, { ma, mb }) → the same, but the run may start/end at a MEMBER of a hyphenated piece (प्राण-देवता → देवता).
+// memberSpans(P, pieces, i) → [start, end) of each member of piece i (null if they don't line up).
 // The rules for a cut (an akṣara is never split; Devanāgarī can't show half of one):
 //   • a merged vowel's akṣara goes with the QUOTE on either side (एवंभूत|मात्मानं, ते|नेशा, अय|मा…, ब्रह्मो|…, निधि|रनित्यम्);
 //   • otherwise an akṣara belongs to the word whose vowel it carries: a final in a conjunct with the next word stays out at the run's end
@@ -101,10 +103,35 @@ function cut(x, a, b) {
   }
   return s < e ? [s, e] : null;
 }
-function piecePortion(P, pieces, a, b) {
+// MEMBER-level cuts (2026-11-25): a quote may be ONE MEMBER (or a run of members) of a hyphenated पद piece — प्राण-देवता quoted as देवता.
+// mem = { ma, mb }: the run starts at member ma of piece a and ends at member mb of piece b (members = the piece split on its hyphens; default
+// ma = 0, mb = the last member of b, i.e. the whole pieces — then the result is EXACTLY the piece-level cut, the same code path). Only pieces
+// a and b are split into members; every other piece stays joined as before, and the members of a and b are rejoined junction by junction
+// like any two pieces (rejoin + align), so the same akṣara rules and the merged-akṣara convention apply at a member boundary.
+// null = the members don't line up with the print (exact or nothing).
+const membersOf = x => clean(x).split(/[-‐]/).filter(Boolean);
+function memberPieces(pieces, a, b, ma, mb) {
+  const out = [], ia = [];   // ia[i] = index in out of piece i's first member
+  for (let i = 0; i < pieces.length; i++) { ia[i] = out.length;
+    if (i === a || i === b) { const ms = membersOf(pieces[i]); if (!ms.length) return null; out.push(...ms); } else out.push(pieces[i]); }
+  const na = membersOf(pieces[a]).length, nb = membersOf(pieces[b]).length;
+  if (!(ma >= 0 && ma < na && mb >= 0 && mb < nb) || (a === b && ma > mb)) return null;
+  return { pcs: out, a: ia[a] + ma, b: ia[b] + mb };
+}
+function piecePortion(P, pieces, a, b, mem) {
   if (a < 0 || b >= pieces.length || a > b) return null;
+  if (mem) { const ma = mem.ma == null ? 0 : mem.ma, nb = membersOf(pieces[b]).length, mb = mem.mb == null ? nb - 1 : mem.mb;
+    if (!(ma === 0 && mb === nb - 1)) { const m = memberPieces(pieces, a, b, ma, mb); if (!m) return null;
+      if (m.a === 0 && m.b === m.pcs.length - 1) return [0, String(P || '').length];
+      const x = prepare(P, m.pcs); return x ? cut(x, m.a, m.b) : null; } }
   if (a === 0 && b === pieces.length - 1) return [0, String(P || '').length];
   const x = prepare(P, pieces); return x ? cut(x, a, b) : null;
 }
 function pieceSpans(P, pieces) { const x = prepare(P, pieces); return x ? pieces.map((_, i) => cut(x, i, i)) : null; }
-module.exports = { piecePortion, pieceSpans, joinPiece, okAt };
+// memberSpans(P, pieces, i) → [[start, end) per member of piece i] in the print (piece i split on its hyphens, the others joined), or null
+function memberSpans(P, pieces, i) {
+  if (i < 0 || i >= pieces.length) return null; const n = membersOf(pieces[i]).length; if (!n) return null;
+  const m = memberPieces(pieces, i, i, 0, n - 1); if (!m) return null; const x = prepare(P, m.pcs); if (!x) return null;
+  const o = []; for (let k = 0; k < n; k++) o.push(m.a + k === 0 && m.a + k === m.pcs.length - 1 ? [0, x.P.length] : cut(x, m.a + k, m.a + k)); return o;
+}
+module.exports = { piecePortion, pieceSpans, memberSpans, joinPiece, okAt };

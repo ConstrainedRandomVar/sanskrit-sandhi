@@ -31,7 +31,7 @@ for (const c of cases.unitSnippet) {
   check(g === c.expect, 'unitSnippet ' + c.id, '"' + g + '", want "' + c.expect + '"');
 }
 for (const c of AC) {
-  const r = SA.piecePortion(c.P, c.pieces, c.a, c.b);
+  const r = SA.piecePortion(c.P, c.pieces, c.a, c.b, c.mem);   // c.mem { ma, mb }: a member-level run (round 11)
   const g = r ? c.P.slice(0, r[0]) + '[' + c.P.slice(r[0], r[1]) + ']' + c.P.slice(r[1]) : 'NULL';
   check(g === c.want, 'sandhi-align ' + c.P, 'got ' + g + ', want ' + c.want);
 }

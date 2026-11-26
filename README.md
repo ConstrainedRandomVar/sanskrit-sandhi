@@ -109,12 +109,16 @@ dot-below (`ṛ`, U+1E5B) and the ISO-15919 ring-below (`r̥`, U+0325) forms.
 const SA = require('./sandhi-align.js');
 // printed word, its पद (a compound member list joined with '-'), and the run of pieces a..b being quoted
 SA.piecePortion('एवंभूतमात्मानं', ['एवम्-भूतम्', 'आत्मानम्'], 1, 1);   // → [start, end) of 'मात्मानं'
+// a run that starts/ends at a MEMBER of a hyphenated piece: 5th argument { ma, mb } (member indices inside piece a / piece b)
+SA.piecePortion('प्राणदेवता', ['प्राण-देवता'], 0, 0, { ma: 1 });   // → [start, end) of 'देवता'
+SA.memberSpans('प्राणदेवता', ['प्राण-देवता'], 0);                  // → the printed span of each member of piece 0
 ```
 
 The पद must rejoin by sandhi to exactly the printed word; pieces are then found by position, never by searching their letters, so
 short and repeated words are placed as surely as long ones. An akṣara is never split: a merged vowel's akṣara goes with the quote; otherwise
 an akṣara belongs to the word whose vowel it carries; an avagraha goes with the word whose अ it stands for. If the pieces do not line up
-with the print (a misprint or a bad split), the result is `null`: mark nothing rather than guess. Built on `sanskrit-search.js`'s sandhi
+with the print (a misprint or a bad split), the result is `null`: mark nothing rather than guess. Member-level runs (a quote of one member of a
+compound piece) follow the same akṣara rules at the member boundary; without the 5th argument every call behaves exactly as before. Built on `sanskrit-search.js`'s sandhi
 rules, so search and pratīka cuts share one set of rules — a new sandhi rule goes into `sanskrit-search.js` and its tests.
 
 ## Tests

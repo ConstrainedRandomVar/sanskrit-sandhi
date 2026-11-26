@@ -382,5 +382,170 @@
   "b": 0,
   "want": "[अहो]रात्रम्",
   "why": "अहः + रात्र → अहो"
+ },
+ {
+  "P": "प्राणदेवता",
+  "pieces": [
+   "प्राण-देवता"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "ma": 1
+  },
+  "want": "प्राण[देवता]",
+  "why": "a member of a hyphenated piece: the quote is that member only"
+ },
+ {
+  "P": "अमृतत्वसाधनम्",
+  "pieces": [
+   "अ-मृत-त्व-साधनम्"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "ma": 0,
+   "mb": 2
+  },
+  "want": "[अमृतत्व]साधनम्",
+  "why": "a run of members ending inside the piece"
+ },
+ {
+  "P": "वाग्वर्तनीं",
+  "pieces": [
+   "वाक्-वर्तनीम्"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "ma": 1
+  },
+  "want": "वा[ग्वर्तनीं]",
+  "why": "member boundary: the previous member's final in a conjunct comes in at the run start (as भिन्न|स्तावता)"
+ },
+ {
+  "P": "बुद्धीन्द्रियाणि",
+  "pieces": [
+   "बुद्धि-इन्द्रियाणि"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "ma": 1
+  },
+  "want": "बु[द्धीन्द्रियाणि]",
+  "why": "member boundary: the merged vowel akṣara goes with the quote"
+ },
+ {
+  "P": "नामाक्षराणि",
+  "pieces": [
+   "नाम-अक्षराणि"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "ma": 1
+  },
+  "want": "ना[माक्षराणि]",
+  "why": "member boundary: अ+अ merged into मा goes with the quote"
+ },
+ {
+  "P": "देवलोकाख्यं",
+  "pieces": [
+   "देव-लोक-आख्यम्"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "mb": 1
+  },
+  "want": "[देवलोका]ख्यं",
+  "why": "a run of members ending at a merged akṣara: it goes with the quote"
+ },
+ {
+  "P": "गवादिवित्तमेव",
+  "pieces": [
+   "गो-आदि-वित्तम्",
+   "एव"
+  ],
+  "a": 0,
+  "b": 1,
+  "mem": {
+   "ma": 2
+  },
+  "want": "गवादि[वित्तमेव]",
+  "why": "member run across pieces; the print's junction variant (गवादि) is found"
+ },
+ {
+  "P": "एवंभूतमात्मानं",
+  "pieces": [
+   "एवम्-भूतम्",
+   "आत्मानम्"
+  ],
+  "a": 1,
+  "b": 1,
+  "mem": {},
+  "want": "एवंभूत[मात्मानं]",
+  "why": "mem with the whole pieces = the piece-level cut"
+ },
+ {
+  "P": "त्रिधादिभेदैरनन्तभेदप्रकारो",
+  "pieces": [
+   "त्रिधा-आदि-भेदैः",
+   "अनन्त-भेद-प्रकारः"
+  ],
+  "a": 0,
+  "b": 0,
+  "mem": {
+   "mb": 1
+  },
+  "want": "[त्रिधादि]भेदैरनन्तभेदप्रकारो",
+  "why": "members 0..1 of the first piece"
+ },
+ {
+  "P": "च्छन्नमित्येतस्य",
+  "pieces": [
+   "छन्नम्",
+   "इति",
+   "एतस्य"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "NULL",
+  "why": "print opens with च्छ (the तुक् of the word before, 6.1.73), पद with छ: no cut today. Handling it is correct but ADDS a link elsewhere (BS 1.2.17 न च्छायात्मादिरितर → इतरः) — a separate, reviewed change (round 11 REPORT)"
+ },
+ {
+  "P": "च्छन्नमित्येतस्य",
+  "pieces": [
+   "छन्नम्",
+   "इति",
+   "एतस्य"
+  ],
+  "a": 1,
+  "b": 2,
+  "want": "NULL",
+  "why": "the same word: no line-up at all while the leading च् is not handled"
+ },
+ {
+  "P": "व्यानीतीति",
+  "pieces": [
+   "व्यानिति",
+   "इति"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "NULL",
+  "why": "print ī vs पद i is a print variant, not a sandhi rule: no cut (exact or nothing)"
+ },
+ {
+  "P": "सत्त्वेव",
+  "pieces": [
+   "सति",
+   "एव"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "NULL",
+  "why": "the पद does not rejoin to the print (सत् तु एव): no cut"
  }
 ]
