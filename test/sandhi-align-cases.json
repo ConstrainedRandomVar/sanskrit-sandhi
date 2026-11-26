@@ -511,8 +511,8 @@
   ],
   "a": 0,
   "b": 0,
-  "want": "NULL",
-  "why": "print opens with च्छ (the तुक् of the word before, 6.1.73), पद with छ: no cut today. Handling it is correct but ADDS a link elsewhere (BS 1.2.17 न च्छायात्मादिरितर → इतरः) — a separate, reviewed change (round 11 REPORT)"
+  "want": "[च्छन्नमि]त्येतस्य",
+  "why": "print opens with च्छ (the तुक् of the word before, 6.1.73/76, printed after the space), पद with छ: the च् goes with the first piece (round 12; was NULL)"
  },
  {
   "P": "च्छन्नमित्येतस्य",
@@ -523,8 +523,8 @@
   ],
   "a": 1,
   "b": 2,
-  "want": "NULL",
-  "why": "the same word: no line-up at all while the leading च् is not handled"
+  "want": "च्छन्न[मित्येतस्य]",
+  "why": "the same word: lines up once the leading च् is the first piece's (round 12; was NULL)"
  },
  {
   "P": "व्यानीतीति",
@@ -547,5 +547,169 @@
   "b": 0,
   "want": "NULL",
   "why": "the पद does not rejoin to the print (सत् तु एव): no cut"
+ },
+ {
+  "P": "च्छायात्मादिरितर",
+  "pieces": [
+   "छाया-आत्म-आदिः",
+   "इतरः"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "च्छायात्मादि[रितर]",
+  "why": "BS 1.2.17 «न च्छायात्मादिरितर»: leading तुक् च् → the new link to mūla इतरः (round 12)"
+ },
+ {
+  "P": "च्छायात्मादिरितर",
+  "pieces": [
+   "छाया-आत्म-आदिः",
+   "इतरः"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "[च्छायात्मादिरि]तर",
+  "why": "leading च् goes with the first piece; merged रि akṣara with the quote"
+ },
+ {
+  "P": "नच्छायात्मा",
+  "pieces": [
+   "न",
+   "छाया-आत्मा"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "न[च्छायात्मा]",
+  "why": "6.1.73 छे च inside a word: the तुक् च् is one akṣara with छ, comes in with the quote"
+ },
+ {
+  "P": "नच्छायात्मा",
+  "pieces": [
+   "न",
+   "छाया-आत्मा"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "[न]च्छायात्मा",
+  "why": "6.1.73: the word before the तुक् ends at its own vowel"
+ },
+ {
+  "P": "स्वच्छाया",
+  "pieces": [
+   "स्व",
+   "छाया"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "स्व[च्छाया]",
+  "why": "6.1.73 (SK स्वच्छाया)"
+ },
+ {
+  "P": "लक्ष्मीच्छाया",
+  "pieces": [
+   "लक्ष्मी",
+   "छाया"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "लक्ष्मी[च्छाया]",
+  "why": "6.1.76 पदान्ताद्वा: after a long पद-final vowel the तुक् form (a variant)"
+ },
+ {
+  "P": "लक्ष्मीछाया",
+  "pieces": [
+   "लक्ष्मी",
+   "छाया"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "लक्ष्मी[छाया]",
+  "why": "6.1.76: … and the form without it (the primary)"
+ },
+ {
+  "P": "नछाया",
+  "pieces": [
+   "न",
+   "छाया"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "NULL",
+  "why": "must NOT align: after a SHORT vowel 6.1.73 is obligatory, a print without च् is not a sandhi form (exact or nothing)"
+ },
+ {
+  "P": "च्छायाम्",
+  "pieces": [
+   "आत्मनः"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "[च्छायाम्]",
+  "why": "a one-piece run is the whole word (unchanged)"
+ },
+ {
+  "P": "च्छायाम्",
+  "pieces": [
+   "आत्म",
+   "छायाम्"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "NULL",
+  "why": "must NOT align: the leading च् is taken only when the FIRST piece opens with छ"
+ },
+ {
+  "P": "तत्साधारणम्",
+  "pieces": [
+   "तद्",
+   "साधारणम्"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "त[त्साधारणम्]",
+  "why": "8.4.55 खरि च: पद तद् + साधारणम् rejoins to the print (round 12; was no cut); त्सा is one akṣara → with the quote"
+ },
+ {
+  "P": "तत्साधारणम्",
+  "pieces": [
+   "तद्",
+   "साधारणम्"
+  ],
+  "a": 0,
+  "b": 0,
+  "want": "[त]त्साधारणम्",
+  "why": "8.4.55: the quote तद् ends before the conjunct akṣara"
+ },
+ {
+  "P": "तद्साधारणम्",
+  "pieces": [
+   "तद्",
+   "साधारणम्"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "NULL",
+  "why": "must NOT align: द् before स is not a sandhi form after 8.4.55 (exact or nothing)"
+ },
+ {
+  "P": "क्षुत्पिपासे",
+  "pieces": [
+   "क्षुध्",
+   "पिपासे"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "क्षु[त्पिपासे]",
+  "why": "8.4.55: ध् → त् before प"
+ },
+ {
+  "P": "तद्गतम्",
+  "pieces": [
+   "तद्",
+   "गतम्"
+  ],
+  "a": 1,
+  "b": 1,
+  "want": "त[द्गतम्]",
+  "why": "NOT 8.4.55: ग is not खर्, द् stays"
  }
 ]

@@ -21,6 +21,8 @@
 //   • otherwise an akṣara belongs to the word whose vowel it carries: a final in a conjunct with the next word stays out at the run's end
 //     (समभव|त्प्राप्त…, महा|न्परि…) and comes in at the run's start (भिन्न|स्तावता);
 //   • an avagraha goes with the word whose अ it stands for (यज्ञो|ऽग्नि…, आत्मा|ऽणुः, हा|ऽऽह).
+//   • a तुक् च् before छ (6.1.73/76) is in one akṣara with the छ, so it comes in with a quote that starts at the छ (न|च्छायात्मा); a print that
+//     OPENS with च्छ (the च् of the word before, printed after the space) is aligned to a पद opening with छ (round 12).
 const SS = require('./sanskrit-search.js');
 const COMB = c => /[ऀ-ःऺ-़ा-ॏ॑-ॗॢॣ]/.test(c || '');   // vowel signs, virama, ं ः ँ, nukta — NOT ऽ
 const VOW0 = /^[ऄ-औॠॡ]/;
@@ -70,6 +72,11 @@ function align(P, S) {
 function prepare(P, pieces) {
   P = String(P || '').normalize('NFC'); const pc = pieces.map(x => joinPiece(x, P));
   if (!P || !pc.length || pc.some(x => !x)) return null;
+  // a printed word that OPENS with च्छ where its पद opens with छ: the च् is the तुक् of the junction with the word BEFORE (6.1.73 छे च after a
+  // short vowel, «छकारे परतः संहितायां विषये ह्रस्वस्य तुगागमो भवति» Kāśikā; optional after a long पद-final vowel, 6.1.76 पदान्ताद्वा), printed
+  // after the space: «न च्छायात्मादिरितर», «…च्छन्नमित्येतस्य». No word begins with च्छ on its own, so the letter goes with the first piece
+  // (one akṣara च्छ — never split). Only when the PRINT shows it; the पद is never changed (#10b).
+  if (/^च्छ/.test(P) && /^छ/.test(pc[0])) pc[0] = 'च्' + pc[0];
   // try the primary join; if the print doesn't line up, a junction's other legitimate form (गवादयः for the corpus's गआदयः …)
   let choice = [], r = rejoin(pc, choice), map = align(P, r.S);
   for (let k = 1; !map && k < pc.length; k++) { const n = SS.sandhiJoinVariants(pc[k - 1], pc[k]).length;

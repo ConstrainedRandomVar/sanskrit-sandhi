@@ -502,6 +502,126 @@
    "b": "लभते",
    "expect": "श्रद्धावांल्लभते",
    "note": "न्+ल → ं + doubled ल्ल (Zenodo-corpus reconciliation, 2026-07-25)"
+  },
+  {
+   "a": "तद्",
+   "b": "साधारणम्",
+   "expect": "तत्साधारणम्",
+   "note": "8.4.55 खरि च: द् → त् before स (round 12)"
+  },
+  {
+   "a": "तद्",
+   "b": "तु",
+   "expect": "तत्तु",
+   "note": "8.4.55: द् → त् before त"
+  },
+  {
+   "a": "तद्",
+   "b": "थूत्कृतम्",
+   "expect": "तत्थूत्कृतम्",
+   "note": "8.4.55: द् → त् before थ"
+  },
+  {
+   "a": "तद्",
+   "b": "षट्",
+   "expect": "तत्षट्",
+   "note": "8.4.55 त्; no ष्टुत्व before ष (8.4.43 तोः षि)"
+  },
+  {
+   "a": "षड्",
+   "b": "सु",
+   "expect": "षट्सु",
+   "note": "8.4.55: ड् → ट् (ट-वर्ग's चर्); no ष्टुत्व from a पदान्त ट-वर्ग (8.4.42)"
+  },
+  {
+   "a": "क्षुध्",
+   "b": "पिपासा",
+   "expect": "क्षुत्पिपासा",
+   "note": "8.4.55: ध् → त्"
+  },
+  {
+   "a": "वाग्",
+   "b": "पतिः",
+   "expect": "वाक्पतिः",
+   "note": "8.4.55: ग् → क्"
+  },
+  {
+   "a": "त्रिष्टुब्",
+   "b": "छन्दः",
+   "expect": "त्रिष्टुप्छन्दः",
+   "note": "8.4.55: ब् → प् before छ (खर्)"
+  },
+  {
+   "a": "तद्",
+   "b": "गच्छति",
+   "expect": "तद्गच्छति",
+   "note": "NOT 8.4.55: ग is not खर् (द् stays, 8.4.53 domain)"
+  },
+  {
+   "a": "वाग्",
+   "b": "देवी",
+   "expect": "वाग्देवी",
+   "note": "NOT 8.4.55: द is not खर्"
+  },
+  {
+   "a": "तद्",
+   "b": "च",
+   "expect": "तच्च",
+   "note": "8.4.40 श्चुत्व first, then चर् (unchanged)"
+  },
+  {
+   "a": "तद्",
+   "b": "शिवः",
+   "expect": "तच्छिवः",
+   "note": "8.4.63 शश्छोऽटि (unchanged)"
+  },
+  {
+   "a": "वाक्",
+   "b": "पतिः",
+   "expect": "वाक्पतिः",
+   "note": "a चर् final stays"
+  },
+  {
+   "a": "न",
+   "b": "छायात्मा",
+   "expect": "नच्छायात्मा",
+   "note": "6.1.73 छे च: short vowel (inherent अ) + छ → तुक् च् (BS 1.2.17 «न च्छायात्मादिरितर»)"
+  },
+  {
+   "a": "स्व",
+   "b": "छाया",
+   "expect": "स्वच्छाया",
+   "note": "6.1.73 (SK: स्वच्छाया)"
+  },
+  {
+   "a": "मधु",
+   "b": "छन्दाः",
+   "expect": "मधुच्छन्दाः",
+   "note": "6.1.73 after short उ"
+  },
+  {
+   "a": "इति",
+   "b": "छान्दोग्ये",
+   "expect": "इतिच्छान्दोग्ये",
+   "note": "6.1.73 after short इ"
+  },
+  {
+   "a": "लक्ष्मी",
+   "b": "छाया",
+   "expect": "लक्ष्मीछाया",
+   "note": "6.1.76 पदान्ताद्वा: after a LONG पद-final vowel optional — primary keeps छ, च्छ is a sandhiJoinVariants form"
+  },
+  {
+   "a": "तत्",
+   "b": "छाया",
+   "expect": "तच्छाया",
+   "note": "consonant final: 8.4.40 श्चुत्व, no तुक् (unchanged)"
+  },
+  {
+   "a": "रामः",
+   "b": "छाया",
+   "expect": "रामश्छाया",
+   "note": "visarga final: 8.3.34/8.4.40, no तुक् (unchanged)"
   }
  ],
  "toDeva": [
@@ -1060,6 +1180,34 @@
    "surface": "इति न्या वाचो विमुञ्चथ",
    "shouldMatch": false,
    "note": "glued gate: a bare न्या… after a SPACE is not an absorbed अ"
+  },
+  {
+   "id": "r12-khar-ca-dad-sa",
+   "query": "tad sAdhAraNam",
+   "surface": "इदमेवास्य तत्साधारणमन्नम्",
+   "shouldMatch": true,
+   "note": "8.4.55: तद् साधारणम् → तत्साधारणम्"
+  },
+  {
+   "id": "r12-khar-ca-no-dsa",
+   "query": "tad sAdhAraNam",
+   "surface": "इदमेवास्य तद्गच्छति",
+   "shouldMatch": false,
+   "note": "no false hit"
+  },
+  {
+   "id": "r12-tuk-cha",
+   "query": "na ChAyAtmA",
+   "surface": "अत्रोच्यते न च्छायात्मादिरितर इह ग्रहणमर्हति",
+   "shouldMatch": true,
+   "note": "6.1.73: न छायात्मा → नच्छायात्मा (print spaced before च्छ)"
+  },
+  {
+   "id": "r12-tuk-cha-long-opt",
+   "query": "lakShmI ChAyA",
+   "surface": "लक्ष्मीछाया",
+   "shouldMatch": true,
+   "note": "6.1.76: the form without तुक् after a long vowel still matches"
   }
  ],
  "unitSpans": [
